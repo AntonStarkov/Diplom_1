@@ -8,6 +8,7 @@ import praktikum.IngredientType;
 
 @RunWith(Parameterized.class)
 public class IngredientTest {
+    private static final float DELTA = 0F;
     IngredientType expectedIngredientType;
     public IngredientTest(IngredientType expectedIngredientType){
         this.expectedIngredientType = expectedIngredientType;
@@ -25,7 +26,7 @@ public class IngredientTest {
     }
     @Test
     public void ingredientGetPriceMethodTest(){
-        Assert.assertEquals(20F, new Ingredient(expectedIngredientType, "Булка", 20F).getPrice(), 0);
+        Assert.assertEquals(20F, new Ingredient(expectedIngredientType, "Булка", 20F).getPrice(), DELTA);
     }
     @Test
     public void ingredientGetNameMethodTest(){

@@ -12,6 +12,7 @@ import praktikum.IngredientType;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BurgerTest {
+    private static final float DELTA = 0F;
     @Spy
     Burger burger;
     @Mock
@@ -26,7 +27,7 @@ public class BurgerTest {
     @Test
     public void burgersSetBunsMethodTest(){
         burger.setBuns(bun);
-        Mockito.verify(burger, Mockito.times(1)).setBuns(bun);
+        Assert.assertEquals(burger.bun, bun);
     }
     @Test
     public void burgersAddIngredientMethodTest(){
@@ -54,7 +55,7 @@ public class BurgerTest {
         Mockito.when(ingredient.getPrice()).thenReturn(50F);
         burger.ingredients.add(ingredient);
         burger.ingredients.add(ingredient);
-        Assert.assertEquals(300F, burger.getPrice(), 0);
+        Assert.assertEquals(300F, burger.getPrice(), DELTA);
     }
     @Test
     public void burgersGetReceiptMethodTest(){

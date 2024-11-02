@@ -3,6 +3,7 @@ import org.junit.Test;
 import praktikum.Bun;
 
 public class BunTest {
+    private static final float DELTA = 0F;
     Bun bun = new Bun("Булка", 20.5F);
     @Test
     public void bunsGetNameMethodTest(){
@@ -10,6 +11,6 @@ public class BunTest {
     }
     @Test
     public void bunsGetPriceMethodTest(){
-        Assert.assertEquals(20.5F, bun.getPrice(), 0);
+        Assert.assertEquals(20.5F, bun.getPrice(), DELTA);
     }
 }
